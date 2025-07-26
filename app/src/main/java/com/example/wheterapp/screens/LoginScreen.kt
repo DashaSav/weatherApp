@@ -21,10 +21,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.wheterapp.ui.theme.LinearBackgroundGradient
 
-// TODO: модифаер кинуть последним параметром
-// TODO: располагать параметры в несколько строк когда их много и не помещаются
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier, onLoginClick: () -> Unit) {
+fun LoginScreen(
+    onLoginClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
 
     val email = remember{mutableStateOf("")}
     val password = remember{mutableStateOf("")}
@@ -72,5 +73,5 @@ fun LoginScreen(modifier: Modifier = Modifier, onLoginClick: () -> Unit) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    LoginScreen {}
+    LoginScreen(onLoginClick = {})
 }

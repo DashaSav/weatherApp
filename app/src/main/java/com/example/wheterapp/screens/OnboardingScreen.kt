@@ -20,12 +20,11 @@ import com.example.wheterapp.ui.theme.LinearBackgroundGradient
 
 @Composable
 fun OnboardingScreen(
-    // TODO: не используется вообще, либо пихай его в колонку, либо убирай вообще
-    modifier: Modifier = Modifier.background(brush = LinearBackgroundGradient.brush),
-    onStartClicked: () -> Unit
+    onStartClicked: () -> Unit,
 ) {
     Column(verticalArrangement = Arrangement.Top,
-        modifier = Modifier.fillMaxSize()) {
+        modifier = Modifier.fillMaxSize()
+            .background(brush = LinearBackgroundGradient.brush)) {
         Image(
             bitmap = ImageBitmap.imageResource(R.drawable.weatherimg), // alt: painter = painterResource(R.drawable.weatherimg)
             contentDescription = "Облако"
@@ -48,7 +47,7 @@ fun OnboardingScreen(
         )
 
         Button(
-            onClick = { onStartClicked() }, // TODO: сокращается до onClick = onStartClicked
+            onClick = onStartClicked,
             content = {
                 Text(text = "Get Start")
             }
